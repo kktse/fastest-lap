@@ -166,15 +166,15 @@ def track_coordinates(track,s):
 
 	return x_center, y_center, x_left, y_left, x_right, y_right, theta;
 
-def circuit_from_kmz(coord_left_kmz_file_name: str, coord_right_kmz_file_name: str, n_points: int, output_file_name: str) -> None:
-    c_coord_left_kmz_file_name = c.c_char_p(coord_left_kmz_file_name.encode('utf-8'))
-    c_coord_right_kmz_file_name = c.c_char_p(coord_right_kmz_file_name.encode('utf-8'))
+def circuit_from_kml(coord_left_kml_file_name: str, coord_right_kml_file_name: str, n_points: int, output_file_name: str) -> None:
+    c_coord_left_kml_file_name = c.c_char_p(coord_left_kml_file_name.encode('utf-8'))
+    c_coord_right_kml_file_name = c.c_char_p(coord_right_kml_file_name.encode('utf-8'))
     c_n_points = c.c_int(n_points)
     c_output_file_name = c.c_char_p(output_file_name.encode('utf-8'))
 
-    c_lib.circuit_from_kmz(
-        c_coord_left_kmz_file_name,
-        c_coord_right_kmz_file_name,
+    c_lib.circuit_from_kml(
+        c_coord_left_kml_file_name,
+        c_coord_right_kml_file_name,
         c_n_points,
         c_output_file_name
     )

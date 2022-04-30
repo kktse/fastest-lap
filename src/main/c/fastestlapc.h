@@ -74,7 +74,7 @@ extern "C"
 
     void track_coordinates(double *x_center, double *y_center, double *x_left, double *y_left, double *x_right, double *y_right, double *theta, struct c_Track *c_track, const int n_points, const double *s);
 
-    void circuit_from_kmz(const char *coord_left_kmz_file_name, const char *coord_right_kmz_file_name, const int n_points, const char *output_file_name);
+    void circuit_from_kml(const char *coord_left_kml_file_name, const char *coord_right_kml_file_name, const int n_points, const char *output_file_name);
 
 #ifdef __cplusplus
 }
